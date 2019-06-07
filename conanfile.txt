@@ -1,0 +1,13 @@
+[requires]
+glfw/3.3@bincrafters/stable
+glew/2.1.0@bincrafters/stable
+glm/0.9.9.4@g-truc/stable
+Assimp/4.1.0@jacmoe/stable
+
+[options]
+Assimp:shared=True
+
+[generators]
+make
+compiler_args
+visual_studio
