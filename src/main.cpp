@@ -1,6 +1,8 @@
 #include <stdio.h>
+#include <iostream>
 #include <GL/glew.h>
 #include <GLFW/glfw3.h>
+#include "utils.h"
 
 #define numVAOs 1
 
@@ -9,10 +11,14 @@ GLuint vao[numVAOs];
 
 GLuint createShaderProgram()
 {
+    GLint vertCompiled;
+    GLint fragCompiled;
+    GLint linked;
+    
     const char *vshaderSource =
         "#version 430    \n"
         "void main(void) \n"
-        "{ gl_Position = vec4(0.0, 0.0, 0.0, 1.0); }";
+        "{ gl_Position = ve4(0.0, 0.0, 0.0, 1.0); }";
     
     const char *fshaderSource =
         "#version 430    \n"
@@ -27,12 +33,35 @@ GLuint createShaderProgram()
     glShaderSource(fShader, 1, &fshaderSource, NULL);
 
     glCompileShader(vShader);
+    checkOpenGLError();
+    glGetShaderiv(vShader, GL_COMPILE_STATUS, &vertCompiled);
+    if (vertCompiled != 1)
+    {
+        std::cout << "Vertex compilation failed." << std::endl;
+        printShaderLog(vShader);
+    }
+
     glCompileShader(fShader);
+    checkOpenGLError();
+    glGetShaderiv(fShader, GL_COMPILE_STATUS, &fragCompiled);
+    if (fragCompiled != 1)
+    {
+        std::cout << "Fragment compilation failed." << std::endl;
+        printShaderLog(fShader);
+    }
 
     GLuint vfProgram = glCreateProgram();
     glAttachShader(vfProgram, vShader);
     glAttachShader(vfProgram, fShader);
     glLinkProgram(vfProgram);
+
+    checkOpenGLError();
+    glGetProgramiv(vfProgram, GL_LINK_STATUS, &linked);
+    if (linked != 1)
+    {
+        std::cout << "Linking failed." << std::endl;
+        printProgramLog(vfProgram);
+    }
 
     return vfProgram;
 }
