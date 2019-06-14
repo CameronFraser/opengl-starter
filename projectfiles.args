@@ -1,1 +1,1 @@
-app/main.cpp src/utils.cpp
+app/main.cpp src/utils.cpp src/shader.cpp
