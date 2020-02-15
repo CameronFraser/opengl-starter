@@ -10,7 +10,7 @@
 
 ## Install Conan & add repositories
 
-Using Conan because most approaches are too platform specific and a pain in the ass.
+Using Conan because most approaches are too platform specific.
 
 Install Conan:  
 `pip install conan`  
@@ -37,7 +37,3 @@ This will generate the following files along with installing dependencies:
 
 To build the project run `make`  
 To run the built project run `./bin/main`
-  
-### Windows  
-
-Coming Soon...
