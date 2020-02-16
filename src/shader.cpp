@@ -10,28 +10,27 @@ Shader::Shader(const char *filePath)
     this->filePath = filePath;
 }
 
-const char *Shader::loadShader()
+std::string Shader::loadShader()
 {
     std::cout << (std::string)this->filePath + " loading." << std::endl;
     std::string content;
-    std::string line = "";
     std::ifstream fileStream(this->filePath, std::ios::in);
+    std::string line = "";
 
     if (fileStream)
     {
-        while (std::getline(fileStream, line))
-        {
+        while (!fileStream.eof()) {
+            getline(fileStream, line);
             content.append(line + "\n");
         }
-        fileStream.close();
         std::cout << (std::string)this->filePath + " loaded." << std::endl;
     }
     else
     {
         throw std::runtime_error((std::string)this->filePath + " failed to load.");
     }
-
-    return content.c_str();
+    fileStream.close();
+    return content;
 }
 
 GLuint createShaderProgram()
@@ -43,14 +42,17 @@ GLuint createShaderProgram()
     Shader VertexShader = Shader("src/shaders/vShader.glsl");
     Shader FragmentShader = Shader("src/shaders/fShader.glsl");
 
-    const char *vshaderSource = VertexShader.loadShader();
-    const char *fshaderSource = FragmentShader.loadShader();
+    std::string vertShaderStr = VertexShader.loadShader();
+    std::string fragShaderStr = FragmentShader.loadShader();
+
+    const char *vertShaderSource = vertShaderStr.c_str();
+    const char *fragShaderSource = fragShaderStr.c_str();
 
     GLuint vShader = glCreateShader(GL_VERTEX_SHADER);
     GLuint fShader = glCreateShader(GL_FRAGMENT_SHADER);
 
-    glShaderSource(vShader, 1, &vshaderSource, NULL);
-    glShaderSource(fShader, 1, &fshaderSource, NULL);
+    glShaderSource(vShader, 1, &vertShaderSource, NULL);
+    glShaderSource(fShader, 1, &fragShaderSource, NULL);
 
     glCompileShader(vShader);
     checkOpenGLError();

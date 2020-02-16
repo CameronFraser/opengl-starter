@@ -18,11 +18,22 @@ void init(GLFWwindow *window) {
     glBindVertexArray(vao[0]);
 }
 
+float x = 0.0f;
+float inc = 0.00001f;
+
 void display(GLFWwindow *window, double currentTime) {
+    glClear(GL_DEPTH_BUFFER_BIT);
     glClearColor(0.0, 0.0, 0.0, 1.0);
     glClear(GL_COLOR_BUFFER_BIT);
     glUseProgram(renderingProgram);
-    glDrawArrays(GL_POINTS, 0, 1);
+
+    x += inc;
+    if (x > 1.0f) inc = -0.00001f;
+    if (x < -1.0f) inc = 0.00001f;
+
+    GLuint offsetLoc = glGetUniformLocation(renderingProgram, "offset");
+    glProgramUniform1f(renderingProgram, offsetLoc, x);
+    glDrawArrays(GL_TRIANGLES, 0, 3);
 }
 
 int main() {

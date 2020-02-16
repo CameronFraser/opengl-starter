@@ -1,0 +1,52 @@
+{
+ "graph_lock": {
+  "nodes": {
+   "2efce66b-5089-11ea-aa45-983b8feb5b40": {
+    "pref": "glew/2.1.0@bincrafters/stable#0:6ae331b72e7e265ca2a3d1d8246faf73aa030238#0", 
+    "options": "shared=False"
+   }, 
+   "2efce671-5089-11ea-aa45-983b8feb5b40": {
+    "pref": "glm/0.9.9.4@g-truc/stable#0:5ab84d6acfe1f23c4fae0ab88f26e3a396351ac9#0", 
+    "options": ""
+   }, 
+   "2efce66e-5089-11ea-aa45-983b8feb5b40": {
+    "pref": "glfw/3.3@bincrafters/stable#0:d50a0d523d98c15bb147b18fa7d203887c38be8b#0", 
+    "options": "fPIC=True\nshared=False"
+   }, 
+   "2efce66d-5089-11ea-aa45-983b8feb5b40": {
+    "pref": "IrrXML/1.2@conan/stable#0:d351525cc53ebe68279edf1978846402420066e7#0", 
+    "options": "fPIC=True\nshared=False"
+   }, 
+   "2efce66f-5089-11ea-aa45-983b8feb5b40": {
+    "pref": "zlib/1.2.11@conan/stable#0:d50a0d523d98c15bb147b18fa7d203887c38be8b#0", 
+    "options": "fPIC=True\nminizip=False\nshared=False"
+   }, 
+   "2efce672-5089-11ea-aa45-983b8feb5b40": {
+    "path": "/home/cameronf/repos/opengl-starter/conanfile.txt", 
+    "pref": null, 
+    "requires": {
+     "glfw/3.3@bincrafters/stable#0": "2efce66e-5089-11ea-aa45-983b8feb5b40", 
+     "Assimp/4.1.0@jacmoe/stable#0": "2efce670-5089-11ea-aa45-983b8feb5b40", 
+     "glew/2.1.0@bincrafters/stable#0": "2efce66b-5089-11ea-aa45-983b8feb5b40", 
+     "stb/20180214@conan/stable#0": "2efce66c-5089-11ea-aa45-983b8feb5b40", 
+     "glm/0.9.9.4@g-truc/stable#0": "2efce671-5089-11ea-aa45-983b8feb5b40"
+    }, 
+    "options": "Assimp:double_precision=False\nAssimp:fPIC=True\nAssimp:internal_irrxml=False\nAssimp:no_export=False\nAssimp:shared=True\nAssimp:with_3d=True\nAssimp:with_3ds=True\nAssimp:with_3mf=True\nAssimp:with_ac=True\nAssimp:with_amf=True\nAssimp:with_ase=True\nAssimp:with_assbin=True\nAssimp:with_assxml=True\nAssimp:with_b3d=True\nAssimp:with_blend=True\nAssimp:with_bvh=True\nAssimp:with_cob=True\nAssimp:with_collada=True\nAssimp:with_csm=True\nAssimp:with_dxf=True\nAssimp:with_fbx=True\nAssimp:with_gltf=True\nAssimp:with_hmp=True\nAssimp:with_ifc=True\nAssimp:with_irr=True\nAssimp:with_irrmesh=True\nAssimp:with_lwo=True\nAssimp:with_lws=True\nAssimp:with_md2=True\nAssimp:with_md3=True\nAssimp:with_md5=True\nAssimp:with_mdc=True\nAssimp:with_mdl=True\nAssimp:with_mmd=True\nAssimp:with_ms3d=True\nAssimp:with_ndo=True\nAssimp:with_nff=True\nAssimp:with_obj=True\nAssimp:with_off=True\nAssimp:with_ogre=True\nAssimp:with_opengex=True\nAssimp:with_ply=True\nAssimp:with_q3bsp=True\nAssimp:with_q3d=True\nAssimp:with_raw=True\nAssimp:with_sib=True\nAssimp:with_smd=True\nAssimp:with_stl=True\nAssimp:with_terragen=True\nAssimp:with_x=True\nAssimp:with_x3d=True\nAssimp:with_xgl=True\nIrrXML:fPIC=True\nIrrXML:shared=False\nglew:shared=False\nglfw:fPIC=True\nglfw:shared=False\nzlib:fPIC=True\nzlib:minizip=False\nzlib:shared=False"
+   }, 
+   "2efce66c-5089-11ea-aa45-983b8feb5b40": {
+    "pref": "stb/20180214@conan/stable#0:5ab84d6acfe1f23c4fae0ab88f26e3a396351ac9#0", 
+    "options": ""
+   }, 
+   "2efce670-5089-11ea-aa45-983b8feb5b40": {
+    "pref": "Assimp/4.1.0@jacmoe/stable#0:e91ffec2800ba4b7d86d10b57858fa33f37df46c#0", 
+    "requires": {
+     "IrrXML/1.2@conan/stable#0": "2efce66d-5089-11ea-aa45-983b8feb5b40", 
+     "zlib/1.2.11@conan/stable#0": "2efce66f-5089-11ea-aa45-983b8feb5b40"
+    }, 
+    "options": "double_precision=False\nfPIC=True\ninternal_irrxml=False\nno_export=False\nshared=True\nwith_3d=True\nwith_3ds=True\nwith_3mf=True\nwith_ac=True\nwith_amf=True\nwith_ase=True\nwith_assbin=True\nwith_assxml=True\nwith_b3d=True\nwith_blend=True\nwith_bvh=True\nwith_cob=True\nwith_collada=True\nwith_csm=True\nwith_dxf=True\nwith_fbx=True\nwith_gltf=True\nwith_hmp=True\nwith_ifc=True\nwith_irr=True\nwith_irrmesh=True\nwith_lwo=True\nwith_lws=True\nwith_md2=True\nwith_md3=True\nwith_md5=True\nwith_mdc=True\nwith_mdl=True\nwith_mmd=True\nwith_ms3d=True\nwith_ndo=True\nwith_nff=True\nwith_obj=True\nwith_off=True\nwith_ogre=True\nwith_opengex=True\nwith_ply=True\nwith_q3bsp=True\nwith_q3d=True\nwith_raw=True\nwith_sib=True\nwith_smd=True\nwith_stl=True\nwith_terragen=True\nwith_x=True\nwith_x3d=True\nwith_xgl=True\nIrrXML:fPIC=True\nIrrXML:shared=False\nzlib:fPIC=True\nzlib:minizip=False\nzlib:shared=False"
+   }
+  }
+ }, 
+ "version": "0.1", 
+ "profile_host": "[settings]\narch=x86_64\narch_build=x86_64\nbuild_type=Release\ncompiler=gcc\ncompiler.libcxx=libstdc++\ncompiler.version=7\nos=Linux\nos_build=Linux\n[options]\n[build_requires]\n[env]\n"
+}
